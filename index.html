@@ -94,33 +94,14 @@
         }
 
         .hero::before {
-            content: '';
+            content: '♫';
             position: absolute;
-            right: -50px;
+            font-size: 15rem;
+            color: rgba(212, 175, 55, 0.05);
             top: 50%;
-            transform: translateY(-50%) rotate(15deg);
-            width: 350px;
-            height: 700px;
-            background: url('Alt-Sax.png') no-repeat center;
-            background-size: contain;
-            opacity: 0.35;
+            left: 50%;
+            transform: translate(-50%, -50%);
             z-index: 0;
-            pointer-events: none;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 25%;
-            transform: rotate(-5deg);
-            width: 320px;
-            height: 380px;
-            background: url('Stagg.png') no-repeat center;
-            background-size: contain;
-            opacity: 0.45;
-            z-index: 0;
-            pointer-events: none;
         }
 
         .hero > * {
@@ -133,21 +114,6 @@
             width: 90%;
             margin-bottom: 3rem;
             position: relative;
-        }
-
-        .hero-logo::after {
-            content: '';
-            position: absolute;
-            left: 0px;
-            bottom: -450px;
-            transform: rotate(-8deg);
-            width: 280px;
-            height: 450px;
-            background: url('Bass.png') no-repeat center;
-            background-size: contain;
-            opacity: 0.40;
-            z-index: 0;
-            pointer-events: none;
         }
 
         .hero h1 {
@@ -220,31 +186,6 @@
         }
 
         /* About Section */
-        #about {
-            position: relative;
-            overflow: hidden;
-        }
-
-        #about::before {
-            content: '';
-            position: absolute;
-            right: -80px;
-            top: 35%;
-            transform: translateY(-50%);
-            width: 550px;
-            height: 380px;
-            background: url('Nord.jpeg') no-repeat center;
-            background-size: contain;
-            opacity: 0.40;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        #about > * {
-            position: relative;
-            z-index: 1;
-        }
-
         .about-content {
             max-width: 900px;
             margin: 0 auto;
@@ -689,12 +630,16 @@
                 <div class="member-role">Alt Saxofoon</div>
             </div>
             <div class="member-card">
-                <div class="member-icon">🎸</div>
+                <div class="member-icon">
+                    <img src="Bass.png" alt="Bas" style="width: 70px; height: 80px; object-fit: contain;">
+                </div>
                 <div class="member-name">Hasse</div>
                 <div class="member-role">Bas</div>
             </div>
             <div class="member-card">
-                <div class="member-icon">🎹</div>
+                <div class="member-icon">
+                    <img src="Nord.jpeg" alt="Keys" style="width: 85px; height: 60px; object-fit: contain;">
+                </div>
                 <div class="member-name">Ron</div>
                 <div class="member-role">Keys</div>
             </div>
@@ -704,22 +649,30 @@
                 <div class="member-role">Drums</div>
             </div>
             <div class="member-card">
-                <div class="member-icon">🎤</div>
+                <div class="member-icon">
+                    <img src="Stagg.png" alt="Microfoon" style="width: 60px; height: 80px; object-fit: contain;">
+                </div>
                 <div class="member-name">Mirjam</div>
                 <div class="member-role">Zang</div>
             </div>
             <div class="member-card">
-                <div class="member-icon">🎤</div>
+                <div class="member-icon">
+                    <img src="Stagg.png" alt="Microfoon" style="width: 60px; height: 80px; object-fit: contain;">
+                </div>
                 <div class="member-name">Paul</div>
                 <div class="member-role">Zang</div>
             </div>
             <div class="member-card">
-                <div class="member-icon">🎤</div>
+                <div class="member-icon">
+                    <img src="Stagg.png" alt="Microfoon" style="width: 60px; height: 80px; object-fit: contain;">
+                </div>
                 <div class="member-name">Mandy</div>
                 <div class="member-role">Zang</div>
             </div>
             <div class="member-card">
-                <div class="member-icon">🎤</div>
+                <div class="member-icon">
+                    <img src="Stagg.png" alt="Microfoon" style="width: 60px; height: 80px; object-fit: contain;">
+                </div>
                 <div class="member-name">Raya</div>
                 <div class="member-role">Zang</div>
             </div>
