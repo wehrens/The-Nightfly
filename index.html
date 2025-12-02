@@ -232,6 +232,15 @@
             transform: translateY(-5px);
         }
 
+        .member-card.vacancy {
+            border-style: dashed;
+            opacity: 0.8;
+        }
+
+        .member-card.vacancy:hover {
+            opacity: 1;
+        }
+
         .member-icon {
             width: 100px;
             height: 100px;
@@ -244,6 +253,10 @@
             font-size: 2.5rem;
             border: 3px solid rgba(212, 175, 55, 0.3);
             pointer-events: none;
+        }
+
+        .member-card.vacancy .member-icon {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.5) 0%, rgba(184, 148, 30, 0.5) 100%);
         }
 
         .member-icon img {
@@ -261,6 +274,16 @@
             color: var(--broken-white);
             font-size: 1.1rem;
             font-style: italic;
+        }
+
+        .vacancy-badge {
+            display: inline-block;
+            background: var(--dark-red);
+            color: var(--broken-white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
         }
 
         /* Repertoire Section */
@@ -719,10 +742,12 @@
     <section id="band" class="members-section">
         <h2 class="blue">De Band</h2>
         <div class="members-grid">
-            <div class="member-card">
-                <div class="member-icon">🎸</div>
-                <div class="member-name">Erik</div>
-                <div class="member-role">Gitaar</div>
+            <div class="member-card" onclick="showMusicianBio('Mirjam', 'Zang', 'Mirjam_Simons.jpg', 'Mirjam studeerde aan de jazzopleiding DJAM in Amsterdam en zingt al jaren in diverse formaties, van piepklein (solo) tot koren. Jazz is haar grote passie.')">
+                <div class="member-icon">
+                    <img src="Stagg.png" alt="Microfoon" style="width: 60px; height: 80px; object-fit: contain;">
+                </div>
+                <div class="member-name">Mirjam</div>
+                <div class="member-role">Zang</div>
             </div>
             <div class="member-card" onclick="showMusicianBio('Gijs', 'Alt Saxofoon', 'photoGijs.jpg', 'Gijs heeft een fantastische sound en improviseert zonder enige moeite met veel plezier fantastische lijnen.')">
                 <div class="member-icon">
@@ -731,12 +756,10 @@
                 <div class="member-name">Gijs</div>
                 <div class="member-role">Alt Saxofoon</div>
             </div>
-            <div class="member-card">
-                <div class="member-icon">
-                    <img src="Bass.png" alt="Bas" style="width: 70px; height: 80px; object-fit: contain;">
-                </div>
-                <div class="member-name">Hasse</div>
-                <div class="member-role">Bas</div>
+            <div class="member-card" onclick="showMusicianBio('Erik', 'Gitaar', 'Erik.jpg', 'Erik is een echte jazz gitarist met een prachtige Bebop beheersing.')">
+                <div class="member-icon">🎸</div>
+                <div class="member-name">Erik</div>
+                <div class="member-role">Gitaar</div>
             </div>
             <div class="member-card" onclick="showMusicianBio('Ron', 'Keys', 'photoRon.jpg', 'Ron Wehrens speelt in diverse pop en funk bands maar is sinds enkele jaren gegrepen door het jazz virus.')">
                 <div class="member-icon">
@@ -745,38 +768,18 @@
                 <div class="member-name">Ron</div>
                 <div class="member-role">Keys</div>
             </div>
-            <div class="member-card">
+            <div class="member-card" onclick="showMusicianBio('Hasse', 'Bas', 'Hasse.jpg', 'Hasse speelt zowel contrabas als elektrische bas en vormt samen met de drums het ritmische fundament van de band.')">
+                <div class="member-icon">
+                    <img src="Bass.png" alt="Bas" style="width: 70px; height: 80px; object-fit: contain;">
+                </div>
+                <div class="member-name">Hasse</div>
+                <div class="member-role">Bas</div>
+            </div>
+            <div class="member-card vacancy" onclick="openContactModal()">
                 <div class="member-icon">🥁</div>
-                <div class="member-name">Mr X</div>
+                <div class="member-name">Vacature</div>
                 <div class="member-role">Drums</div>
-            </div>
-            <div class="member-card">
-                <div class="member-icon">
-                    <img src="Stagg.png" alt="Microfoon" style="width: 60px; height: 80px; object-fit: contain;">
-                </div>
-                <div class="member-name">Marietje</div>
-                <div class="member-role">Zang</div>
-            </div>
-            <div class="member-card">
-                <div class="member-icon">
-                    <img src="Stagg.png" alt="Microfoon" style="width: 60px; height: 80px; object-fit: contain;">
-                </div>
-                <div class="member-name">Frits</div>
-                <div class="member-role">Zang</div>
-            </div>
-            <div class="member-card">
-                <div class="member-icon">
-                    <img src="Stagg.png" alt="Microfoon" style="width: 60px; height: 80px; object-fit: contain;">
-                </div>
-                <div class="member-name">Hyacintha</div>
-                <div class="member-role">Zang</div>
-            </div>
-            <div class="member-card">
-                <div class="member-icon">
-                    <img src="Stagg.png" alt="Microfoon" style="width: 60px; height: 80px; object-fit: contain;">
-                </div>
-                <div class="member-name">Okello</div>
-                <div class="member-role">Zang</div>
+                <div class="vacancy-badge">We zoeken een drummer!</div>
             </div>
         </div>
     </section>
@@ -791,20 +794,27 @@
             </p>
         </div>
         <div class="repertoire-list">
-            <div class="repertoire-item">Stella by Starlight</div>
-            <div class="repertoire-item">Tenor Madness</div>
-            <div class="repertoire-item">The Chicken</div>
-            <div class="repertoire-item">Put It Where You Want It</div>
+            <div class="repertoire-item">All the Things You Are</div>
+            <div class="repertoire-item">Alone Together</div>
+            <div class="repertoire-item">Autumn Leaves</div>
+            <div class="repertoire-item">Black Orpheus</div>
+            <div class="repertoire-item">Blue Bossa</div>
             <div class="repertoire-item">Blue Monk</div>
-            <div class="repertoire-item">Cry Me A River</div>
+            <div class="repertoire-item">Cry Me a River</div>
             <div class="repertoire-item">Days of Wine and Roses</div>
+            <div class="repertoire-item">Fly Me to the Moon</div>
+            <div class="repertoire-item">Girl from Ipanema</div>
+            <div class="repertoire-item">Lady Bird</div>
             <div class="repertoire-item">Lullaby of Birdland</div>
             <div class="repertoire-item">Nature Boy</div>
+            <div class="repertoire-item">Put It Where You Want It</div>
+            <div class="repertoire-item">Softly as in a Morning Sunrise</div>
             <div class="repertoire-item">Song for My Father</div>
-            <div class="repertoire-item">Alone Together</div>
-            <div class="repertoire-item">All the Things You Are</div>
-            <div class="repertoire-item">Blue Bossa</div>
+            <div class="repertoire-item">Stella by Starlight</div>
             <div class="repertoire-item">Summertime</div>
+            <div class="repertoire-item">Tenor Madness</div>
+            <div class="repertoire-item">The Chicken</div>
+            <div class="repertoire-item">What's New</div>
         </div>
     </section>
 
