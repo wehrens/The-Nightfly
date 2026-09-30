@@ -265,9 +265,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
     <div class="wrap">
       <div class="sec-head">
         <h2>Luister</h2>
-        <p>Een paar opnames uit de repetitieruimte, zodat u weet hoe we klinken.</p>
+        <p>Fragmenten uit onze studio-opnames, zodat u precies weet hoe we klinken.</p>
       </div>
-      <!-- Zet de mp3-bestanden in een map "audio" naast index.html en pas de namen hieronder aan -->
+      <!-- De mp3-bestanden staan naast index.html; namen staan in TRACKS onderaan -->
       <div class="tracks" id="tracks"></div>
     </div>
   </section>
@@ -351,7 +351,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
         </div>
         <p>Vertel ons over uw avond: de datum, de plek en wat voor sfeer u zoekt. U hoort binnen twee dagen van ons, met een voorstel en een prijs.</p>
         <div class="reach">
-          <a class="btn btn-moon" id="waLink" href="https://wa.me/31646293590" target="_blank" rel="noopener">WhatsApp ons</a>
+          <a class="btn btn-moon" href="https://signal.me/#p/+31646293590" target="_blank" rel="noopener">Signal ons</a>
+          <a class="btn btn-line" id="waLink" href="https://wa.me/31646293590" target="_blank" rel="noopener">WhatsApp</a>
           <a class="btn btn-line" href="tel:+31646293590">Bel 06-46293590</a>
         </div>
         <a class="mail" id="mailLink" href="#">e-mail</a>
@@ -391,9 +392,12 @@ var WHATSAPP = "31646293590";
 
 /* ===== Opnames: bestanden in de map "audio/" ===== */
 var TRACKS = [
-  {title:"Agua De Beber", meta:"Antonio Carlos Jobim", src:"audio/agua-de-beber.mp3"},
-  {title:"Kiss Of Life", meta:"Sade", src:"audio/kiss-of-life.mp3"},
-  {title:"Just The 2 Of Us", meta:"Grover Washington Jr.", src:"audio/just-the-2-of-us.mp3"}
+  {title:"Get Here", meta:"Oleta Adams", src:"GetHere.mp3"},
+  {title:"Sweet Love", meta:"Anita Baker", src:"SweetLove.mp3"},
+  {title:"Rhythm of Life", meta:"Oleta Adams", src:"RhythmOfLife.mp3"},
+  {title:"One Day I'll Fly Away", meta:"Randy Crawford", src:"OneDayI_llFlyAway.mp3"},
+  {title:"I Only Miss You When I'm Drunk", meta:"Nikki Yanofsky", src:"IOnlyMissYouWhenImDrunk.mp3"},
+  {title:"Wish I Didn't Miss You", meta:"Angie Stone", src:"WishIDidntMissYouAnymore.mp3"}
 ];
 
 /* ===== Repertoire ===== */
@@ -410,7 +414,8 @@ var SONGS = [
   ["Kiss Of Life","Sade",1994,"soul"],
   ["I Only Miss You When I'm Drunk","Nikki Yanofsky",2016,"soul"],
   ["Never Too Much","Luther Vandross",1981,"soul"],
-  ["Just The 2 Of Us","Grover Washington Jr.",1981,"soul"]
+  ["Just The 2 Of Us","Grover Washington Jr.",1981,"soul"],
+  ["Wish I Didn't Miss You","Angie Stone",2001,"soul"]
 ];
 
 document.getElementById("yr").textContent = new Date().getFullYear();
