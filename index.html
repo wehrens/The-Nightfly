@@ -237,8 +237,8 @@ select option{background:var(--night)}
 .direct-line .ico{width:1em;height:1em;vertical-align:-.12em;margin-right:.3em}
 .via{border:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem}
 .via legend{float:left;width:100%;font-size:.9rem;color:var(--cream-dim);margin:0 0 .35rem;padding:0}
-.via label{display:inline-flex;cursor:pointer}
-.via input{position:absolute;opacity:0;pointer-events:none}
+.via label{display:inline-flex;cursor:pointer;position:relative}
+.via input{position:absolute;inset:0;width:1px;height:1px;margin:0;padding:0;opacity:0;pointer-events:none}
 .via span{font-size:.9rem;padding:.4rem .95rem;border-radius:999px;border:1px solid rgba(245,237,219,.25);color:var(--cream-dim)}
 .via input:checked + span{background:var(--cream);color:var(--night);border-color:var(--cream)}
 .via input:focus-visible + span{outline:2px solid var(--moon);outline-offset:2px}
