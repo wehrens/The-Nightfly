@@ -212,6 +212,18 @@ input,select,textarea{font:inherit;font-size:1rem;color:var(--cream);background:
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--moon)}
 textarea{min-height:7rem;resize:vertical}
 select option{background:var(--night)}
+.direct-line{font-size:.97rem;color:var(--cream-dim);line-height:1.9}
+.direct-line a{color:var(--moon);text-decoration:none;white-space:nowrap}
+.direct-line a:hover{text-decoration:underline}
+.direct-line .ico{width:1em;height:1em;vertical-align:-.12em;margin-right:.3em}
+.via{border:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem}
+.via legend{float:left;width:100%;font-size:.9rem;color:var(--cream-dim);margin:0 0 .35rem;padding:0}
+.via label{display:inline-flex;cursor:pointer}
+.via input{position:absolute;opacity:0;pointer-events:none}
+.via span{font-size:.9rem;padding:.4rem .95rem;border-radius:999px;border:1px solid rgba(245,237,219,.25);color:var(--cream-dim)}
+.via input:checked + span{background:var(--cream);color:var(--night);border-color:var(--cream)}
+.via input:focus-visible + span{outline:2px solid var(--moon);outline-offset:2px}
+.via.full{grid-column:1/-1}
 .send{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:.7rem}
 .send .btn-moon{border:none}
 .reach{display:flex;flex-wrap:wrap;gap:.7rem;margin:0 0 1.5rem}
@@ -356,13 +368,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
         <div class="sec-head" style="margin-bottom:1.5rem">
           <h2>Boek The NightFly</h2>
         </div>
-        <p>Vertel ons over uw avond: de datum, de plek en wat voor sfeer u zoekt. U hoort binnen twee dagen van ons, met een voorstel en een prijs.</p>
-        <div class="reach">
-          <a class="btn btn-moon" href="https://signal.me/#eu/irRIm-XGStW0hF25XHZKeJc_e5F68eqmX7J_dArdbVAi_PT_YEFDfKxAAV1VU0aS" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0q-.934 0-1.83.139l.17 1.111a11 11 0 0 1 3.32 0l.172-1.111A12 12 0 0 0 12 0M9.152.34A12 12 0 0 0 5.77 1.742l.584.961a10.8 10.8 0 0 1 3.066-1.27zm5.696 0-.268 1.094a10.8 10.8 0 0 1 3.066 1.27l.584-.962A12 12 0 0 0 14.848.34M12 2.25a9.75 9.75 0 0 0-8.539 14.459c.074.134.1.292.064.441l-1.013 4.338 4.338-1.013a.62.62 0 0 1 .441.064A9.7 9.7 0 0 0 12 21.75c5.385 0 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25m-7.092.068a12 12 0 0 0-2.59 2.59l.909.664a11 11 0 0 1 2.345-2.345zm14.184 0-.664.909a11 11 0 0 1 2.345 2.345l.909-.664a12 12 0 0 0-2.59-2.59M1.742 5.77A12 12 0 0 0 .34 9.152l1.094.268a10.8 10.8 0 0 1 1.269-3.066zm20.516 0-.961.584a10.8 10.8 0 0 1 1.27 3.066l1.093-.268a12 12 0 0 0-1.402-3.383M.138 10.168A12 12 0 0 0 0 12q0 .934.139 1.83l1.111-.17A11 11 0 0 1 1.125 12q0-.848.125-1.66zm23.723.002-1.111.17q.125.812.125 1.66c0 .848-.042 1.12-.125 1.66l1.111.172a12.1 12.1 0 0 0 0-3.662M1.434 14.58l-1.094.268a12 12 0 0 0 .96 2.591l-.265 1.14 1.096.255.36-1.539-.188-.365a10.8 10.8 0 0 1-.87-2.35m21.133 0a10.8 10.8 0 0 1-1.27 3.067l.962.584a12 12 0 0 0 1.402-3.383zm-1.793 3.848a11 11 0 0 1-2.345 2.345l.664.909a12 12 0 0 0 2.59-2.59zm-19.959 1.1L.357 21.48a1.8 1.8 0 0 0 2.162 2.161l1.954-.455-.256-1.095-1.953.455a.675.675 0 0 1-.81-.81l.454-1.954zm16.832 1.769a10.8 10.8 0 0 1-3.066 1.27l.268 1.093a12 12 0 0 0 3.382-1.402zm-10.94.213-1.54.36.256 1.095 1.139-.266c.814.415 1.683.74 2.591.961l.268-1.094a10.8 10.8 0 0 1-2.35-.869zm3.634 1.24-.172 1.111a12.1 12.1 0 0 0 3.662 0l-.17-1.111q-.812.125-1.66.125a11 11 0 0 1-1.66-.125"/></svg>Signal ons</a>
-          <a class="btn btn-line" id="waLink" href="https://wa.me/31646293590" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>WhatsApp</a>
-          <a class="btn btn-line" href="tel:+31646293590">Bel 06-46293590</a>
-        </div>
-        <a class="mail" id="mailLink" href="#">e-mail</a>
+        <p>Vertel ons over uw avond: de datum, de plek en de sfeer die u zoekt. Binnen twee dagen ontvangt u een voorstel met prijs.</p>
+        <p class="direct-line">Liever direct contact? <a href="https://signal.me/#eu/irRIm-XGStW0hF25XHZKeJc_e5F68eqmX7J_dArdbVAi_PT_YEFDfKxAAV1VU0aS" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0q-.934 0-1.83.139l.17 1.111a11 11 0 0 1 3.32 0l.172-1.111A12 12 0 0 0 12 0M9.152.34A12 12 0 0 0 5.77 1.742l.584.961a10.8 10.8 0 0 1 3.066-1.27zm5.696 0-.268 1.094a10.8 10.8 0 0 1 3.066 1.27l.584-.962A12 12 0 0 0 14.848.34M12 2.25a9.75 9.75 0 0 0-8.539 14.459c.074.134.1.292.064.441l-1.013 4.338 4.338-1.013a.62.62 0 0 1 .441.064A9.7 9.7 0 0 0 12 21.75c5.385 0 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25m-7.092.068a12 12 0 0 0-2.59 2.59l.909.664a11 11 0 0 1 2.345-2.345zm14.184 0-.664.909a11 11 0 0 1 2.345 2.345l.909-.664a12 12 0 0 0-2.59-2.59M1.742 5.77A12 12 0 0 0 .34 9.152l1.094.268a10.8 10.8 0 0 1 1.269-3.066zm20.516 0-.961.584a10.8 10.8 0 0 1 1.27 3.066l1.093-.268a12 12 0 0 0-1.402-3.383M.138 10.168A12 12 0 0 0 0 12q0 .934.139 1.83l1.111-.17A11 11 0 0 1 1.125 12q0-.848.125-1.66zm23.723.002-1.111.17q.125.812.125 1.66c0 .848-.042 1.12-.125 1.66l1.111.172a12.1 12.1 0 0 0 0-3.662M1.434 14.58l-1.094.268a12 12 0 0 0 .96 2.591l-.265 1.14 1.096.255.36-1.539-.188-.365a10.8 10.8 0 0 1-.87-2.35m21.133 0a10.8 10.8 0 0 1-1.27 3.067l.962.584a12 12 0 0 0 1.402-3.383zm-1.793 3.848a11 11 0 0 1-2.345 2.345l.664.909a12 12 0 0 0 2.59-2.59zm-19.959 1.1L.357 21.48a1.8 1.8 0 0 0 2.162 2.161l1.954-.455-.256-1.095-1.953.455a.675.675 0 0 1-.81-.81l.454-1.954zm16.832 1.769a10.8 10.8 0 0 1-3.066 1.27l.268 1.093a12 12 0 0 0 3.382-1.402zm-10.94.213-1.54.36.256 1.095 1.139-.266c.814.415 1.683.74 2.591.961l.268-1.094a10.8 10.8 0 0 1-2.35-.869zm3.634 1.24-.172 1.111a12.1 12.1 0 0 0 3.662 0l-.17-1.111q-.812.125-1.66.125a11 11 0 0 1-1.66-.125"/></svg>Signal</a>, <a id="waLink" href="https://wa.me/31646293590" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>WhatsApp</a> of bel <a href="tel:+31646293590">06-46293590</a> · <a id="mailLink" href="#">e-mail</a></p>
       </div>
       <form id="bookForm" novalidate>
         <label>Naam<input name="naam" autocomplete="name" required></label>
@@ -375,12 +382,16 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
         </label>
         <label class="full">Locatie<input name="locatie" placeholder="Plaats of naam van de locatie"></label>
         <label class="full">Vertel iets over uw avond<textarea name="bericht" placeholder="Aantal gasten, gewenste speeltijd, bijzondere wensen"></textarea></label>
+        <fieldset class="via full">
+          <legend>Versturen via</legend>
+          <label><input type="radio" name="via" value="signal" checked><span>Signal</span></label>
+          <label><input type="radio" name="via" value="mail"><span>E-mail</span></label>
+          <label><input type="radio" name="via" value="wa"><span>WhatsApp</span></label>
+        </fieldset>
         <div class="send">
-          <button class="btn btn-moon" type="submit" value="mail">Verstuur per e-mail</button>
-          <button class="btn btn-line" type="submit" value="signal"><svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0q-.934 0-1.83.139l.17 1.111a11 11 0 0 1 3.32 0l.172-1.111A12 12 0 0 0 12 0M9.152.34A12 12 0 0 0 5.77 1.742l.584.961a10.8 10.8 0 0 1 3.066-1.27zm5.696 0-.268 1.094a10.8 10.8 0 0 1 3.066 1.27l.584-.962A12 12 0 0 0 14.848.34M12 2.25a9.75 9.75 0 0 0-8.539 14.459c.074.134.1.292.064.441l-1.013 4.338 4.338-1.013a.62.62 0 0 1 .441.064A9.7 9.7 0 0 0 12 21.75c5.385 0 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25m-7.092.068a12 12 0 0 0-2.59 2.59l.909.664a11 11 0 0 1 2.345-2.345zm14.184 0-.664.909a11 11 0 0 1 2.345 2.345l.909-.664a12 12 0 0 0-2.59-2.59M1.742 5.77A12 12 0 0 0 .34 9.152l1.094.268a10.8 10.8 0 0 1 1.269-3.066zm20.516 0-.961.584a10.8 10.8 0 0 1 1.27 3.066l1.093-.268a12 12 0 0 0-1.402-3.383M.138 10.168A12 12 0 0 0 0 12q0 .934.139 1.83l1.111-.17A11 11 0 0 1 1.125 12q0-.848.125-1.66zm23.723.002-1.111.17q.125.812.125 1.66c0 .848-.042 1.12-.125 1.66l1.111.172a12.1 12.1 0 0 0 0-3.662M1.434 14.58l-1.094.268a12 12 0 0 0 .96 2.591l-.265 1.14 1.096.255.36-1.539-.188-.365a10.8 10.8 0 0 1-.87-2.35m21.133 0a10.8 10.8 0 0 1-1.27 3.067l.962.584a12 12 0 0 0 1.402-3.383zm-1.793 3.848a11 11 0 0 1-2.345 2.345l.664.909a12 12 0 0 0 2.59-2.59zm-19.959 1.1L.357 21.48a1.8 1.8 0 0 0 2.162 2.161l1.954-.455-.256-1.095-1.953.455a.675.675 0 0 1-.81-.81l.454-1.954zm16.832 1.769a10.8 10.8 0 0 1-3.066 1.27l.268 1.093a12 12 0 0 0 3.382-1.402zm-10.94.213-1.54.36.256 1.095 1.139-.266c.814.415 1.683.74 2.591.961l.268-1.094a10.8 10.8 0 0 1-2.35-.869zm3.634 1.24-.172 1.111a12.1 12.1 0 0 0 3.662 0l-.17-1.111q-.812.125-1.66.125a11 11 0 0 1-1.66-.125"/></svg>Verstuur via Signal</button>
-          <button class="btn btn-line" type="submit" value="wa"><svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Verstuur via WhatsApp</button>
+          <button class="btn btn-moon" type="submit">Verstuur aanvraag</button>
         </div>
-        <p class="form-note" id="formNote">E-mail en WhatsApp openen met het bericht al ingevuld. Bij Signal kopiëren we het bericht, zodat u het alleen nog hoeft te plakken.</p>
+        <p class="form-note" id="formNote"></p>
       </form>
     </div>
   </section>
@@ -503,12 +514,18 @@ TRACKS.forEach(function(t){
   wrapT.appendChild(el);
 });
 
+
+/* toelichting onder de verstuurknop, per gekozen kanaal */
+var NOTES = {signal:"Signal opent en het bericht wordt gekopieerd, zodat u het alleen nog hoeft te plakken.", mail:"Uw e-mailprogramma opent met het bericht al ingevuld.", wa:"WhatsApp opent met het bericht al ingevuld."};
+function setNote(){ var v = document.querySelector("input[name=via]:checked").value, n = document.getElementById("formNote"); n.textContent = NOTES[v]; n.className = "form-note"; }
+document.querySelectorAll("input[name=via]").forEach(function(r){ r.addEventListener("change", setNote); });
+setNote();
 /* booking form -> mailto */
 document.getElementById("bookForm").addEventListener("submit", function(e){
   e.preventDefault();
   var f = e.target, v = function(n){ return (f.elements[n].value || "").trim(); };
   if(!v("naam")){ f.elements.naam.focus(); f.elements.naam.setAttribute("aria-invalid","true"); return; }
-  var via = e.submitter ? e.submitter.value : "mail";
+  var via = (f.querySelector("input[name=via]:checked") || {}).value || "mail";
   var viaWa = via === "wa";
   var body = "Naam: " + v("naam") + "\nTelefoon: " + v("telefoon") + "\nDatum: " + v("datum") +
     "\nGelegenheid: " + v("soort") + "\nLocatie: " + v("locatie") + "\n\n" + v("bericht");
