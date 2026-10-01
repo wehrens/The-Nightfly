@@ -482,6 +482,18 @@ document.querySelector(".brand").addEventListener("click", function(e){
   if(location.hash) history.replaceState(null, "", location.pathname + location.search);
 });
 if(location.hash === "#top") history.replaceState(null, "", location.pathname + location.search);
+
+/* interne links: soepel scrollen zonder #anker in de adresbalk */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener("click", function(e){
+    var id = a.getAttribute("href").slice(1), t = id && document.getElementById(id);
+    if(!t) return;
+    e.preventDefault();
+    t.scrollIntoView({behavior:"smooth", block:"start"});
+    if(id === "main"){ t.setAttribute("tabindex","-1"); t.focus({preventScroll:true}); }
+    if(location.hash) history.replaceState(null, "", location.pathname + location.search);
+  });
+});
 /* menu */
 var mb = document.querySelector(".menu-btn"), menu = document.getElementById("menu");
 mb.addEventListener("click", function(){
