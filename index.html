@@ -497,6 +497,30 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
     if(location.hash) history.replaceState(null, "", location.pathname + location.search);
   });
 });
+
+/* logo komt af en toe even tot leven: lichte shake, kleine draai of ademhaling */
+(function(){
+  var logo = document.querySelector(".hero-logo");
+  if(!logo || !logo.animate || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var visible = true;
+  if("IntersectionObserver" in window){
+    new IntersectionObserver(function(en){ visible = en[0].isIntersecting; }).observe(logo);
+  }
+  var moves = [
+    { k:[{transform:"translateX(0)"},{transform:"translateX(-3px) rotate(-.6deg)"},{transform:"translateX(3px) rotate(.6deg)"},{transform:"translateX(-2px)"},{transform:"translateX(1px)"},{transform:"translateX(0)"}], d:700, e:"ease-in-out" },
+    { k:[{transform:"rotate(0)"},{transform:"rotate(-3deg)"},{transform:"rotate(2deg)"},{transform:"rotate(0)"}], d:1600, e:"ease-in-out" },
+    { k:[{transform:"scale(1)"},{transform:"scale(.96)"},{transform:"scale(1.01)"},{transform:"scale(1)"}], d:1400, e:"ease-in-out" }
+  ];
+  function next(){ setTimeout(play, 7000 + Math.random()*9000); }
+  function play(){
+    if(visible && !document.hidden){
+      var m = moves[Math.floor(Math.random()*moves.length)];
+      logo.animate(m.k, {duration:m.d, easing:m.e});
+    }
+    next();
+  }
+  setTimeout(next, 2000);
+})();
 /* menu */
 var mb = document.querySelector(".menu-btn"), menu = document.getElementById("menu");
 mb.addEventListener("click", function(){
