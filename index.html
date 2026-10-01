@@ -185,14 +185,30 @@ section{padding:5.5rem 0}
 
 /* ---------- prices ---------- */
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(245,237,219,.2)}
-.plan{padding:2rem 1.75rem 2rem 0;border-bottom:1px solid rgba(245,237,219,.2)}
+.plan{padding:2rem 1.75rem 2rem 0;border-bottom:1px solid rgba(245,237,219,.2);display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:0;align-content:start}
+.plan .price{align-self:end}
 .plan + .plan{padding-left:1.75rem;border-left:1px solid rgba(245,237,219,.2)}
 .plan h3{font-family:var(--serif);font-size:1.65rem;font-weight:600;margin:0 0 .3rem;line-height:1.15}
 .plan .who{color:var(--dusk);font-size:.95rem;margin:0 0 1.4rem}
-.price{font-family:var(--serif);font-size:2.5rem;font-weight:500;color:var(--moon);line-height:1;margin:0 0 .3rem}
+.price{font-family:var(--serif);font-size:2.5rem;font-weight:500;font-variant-numeric:lining-nums;color:var(--moon);line-height:1;margin:0 0 .3rem}
 .price small{font-family:var(--sans);font-size:.9rem;color:var(--cream-dim)}
 .plan ul{margin:1.25rem 0 0;padding-left:1.1rem;color:var(--cream-dim);font-size:.97rem}
 .plan li{margin:.3rem 0}
+.plan .who .line{display:block;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--cream);margin-bottom:.45rem}
+.price small{margin-right:.15rem}
+.extras{display:grid;grid-template-columns:1.4fr 1fr;gap:2.5rem;margin-top:3rem;align-items:start}
+.extras h3{font-family:var(--serif);font-size:1.65rem;font-weight:600;margin:0 0 1rem;line-height:1.15}
+.extras dl{margin:0}
+.extras dl > div{display:grid;grid-template-columns:1fr auto;gap:.15rem 1rem;padding:.9rem 0;border-bottom:1px dotted rgba(245,237,219,.25)}
+.extras dl > div:first-child{border-top:1px dotted rgba(245,237,219,.25)}
+.extras dt{font-weight:500}
+.extras dd{margin:0}
+.extras .amt{font-variant-numeric:lining-nums;font-family:var(--serif);font-size:1.25rem;color:var(--moon);text-align:right;white-space:nowrap}
+.extras .desc{grid-column:1/-1;color:var(--cream-dim);font-size:.95rem}
+.complete{border:1px solid rgba(232,195,78,.45);border-radius:14px;padding:1.75rem;background:var(--night-soft)}
+.complete p{color:var(--cream-dim);margin:0 0 1.25rem}
+.complete .price{margin:0;color:var(--moon)}
+@media (max-width:820px){.extras{grid-template-columns:1fr;gap:2rem}}
 .fine{margin-top:2rem;font-size:.95rem;color:var(--dusk);max-width:44rem}
 @media (max-width:820px){
   .plans{grid-template-columns:1fr}
@@ -339,21 +355,36 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
       <div class="plans">
         <div class="plan">
           <h3>Trio</h3>
-          <p class="who">Zang, piano en drums.</p>
-          <p class="price">€ 450 <small>vanaf</small></p>
-          <ul><li>2 sets van 45 minuten</li><li>Akoestisch of met lichte versterking</li></ul>
+          <p class="who"><span class="line">Zang, piano en drums</span>Intiem en verfijnd. Met een Nord Stage 4, een digitaal drumstel en eigen compacte versterkers houden we het volume precies op het goede niveau. Ideaal voor een diner, borrel of kleiner gezelschap.</p>
+          <p class="price"><small>vanaf</small> € 450</p>
+          <ul><li>2 sets van 45 minuten</li><li>Eigen versterking</li></ul>
         </div>
         <div class="plan">
-          <h3>Receptie of diner</h3>
-          <p class="who">De volledige combo als sfeervolle begeleiding, op een volume waarbij gasten gewoon kunnen praten.</p>
-          <p class="price">€ 1.150 <small>vanaf</small></p>
-          <ul><li>2 sets van 45 minuten</li><li>Eigen geluidsinstallatie</li><li>Achtergrondmuziek in de pauzes</li></ul>
+          <h3>Kwartet</h3>
+          <p class="who"><span class="line">Zang, piano, bas en drums</span>Met de bas erbij wordt de sound voller en krijgt de muziek meer groove. Sfeervol bij een receptie, swingend genoeg voor later op de avond.</p>
+          <p class="price"><small>vanaf</small> € 650</p>
+          <ul><li>2 sets van 45 minuten</li><li>Eigen versterking</li></ul>
         </div>
         <div class="plan">
-          <h3>Avondvullend</h3>
-          <p class="who">Van ontvangst tot feest: rustig beginnen, dansbaar eindigen. Ideaal voor bruiloften en bedrijfsfeesten.</p>
-          <p class="price">€ 1.550 <small>vanaf</small></p>
-          <ul><li>3 sets van 45 minuten</li><li>Eigen geluid en sfeerverlichting</li><li>Verzoeknummers in overleg</li></ul>
+          <h3>Kwintet</h3>
+          <p class="who"><span class="line">De complete NightFly, met sax</span>Met Gijs, onze werkelijk fenomenale saxofonist, wordt het echt feest. De volledige band, inclusief onze eigen lichteffecten.</p>
+          <p class="price"><small>vanaf</small> € 850</p>
+          <ul><li>3 sets van 45 minuten</li><li>Eigen versterking</li><li>Lichteffecten inbegrepen</li></ul>
+        </div>
+      </div>
+      <div class="extras">
+        <div>
+          <h3>Uit te breiden met</h3>
+          <dl>
+            <div><dt>Geluidstechnicus</dt><dd class="amt">€ 450</dd><dd class="desc">Onze vaste technicus kent de band door en door en zorgt voor een perfecte mix.</dd></div>
+            <div><dt>DJ</dt><dd class="amt">€ 500</dd><dd class="desc">Onze DJ draait vinyl, met een smaak die naadloos bij ons past: coole jazz en funk. Voor, tussen en na de sets.</dd></div>
+            <div><dt>Extra geluidsapparatuur</dt><dd class="amt">op aanvraag</dd><dd class="desc">We hebben eigen versterkers. Voor grotere zalen of optredens buiten huren we indien nodig extra apparatuur in.</dd></div>
+          </dl>
+        </div>
+        <div class="complete">
+          <h3>Een compleet verzorgde avond</h3>
+          <p>Het kwintet met lichteffecten, onze geluidstechnicus en de DJ.</p>
+          <p class="price"><small>vanaf</small> € 1.800</p>
         </div>
       </div>
       <p class="fine">Alle prijzen zijn exclusief btw. Voor grote evenementen (500+ gasten) of specifieke wensen maken we graag een offerte op maat. We spelen door heel Nederland; prijzen zijn inclusief opbouw en reiskosten tot 75 km vanaf Hilversum, daarbuiten rekenen we een kleine reiskostenvergoeding. Langere speeltijd is mogelijk, in overleg.</p>
